@@ -128,5 +128,6 @@ WHERE EXISTS
 SELECT MAX(employeeid)
 FROM physician;
 
+
 SELECT MIN(employeeid)
 FROM physician;
