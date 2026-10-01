@@ -1,172 +1,258 @@
-# 🚶‍♂️ Steppy — Smart Step Tracking & Fitness Challenge App
-
-> A modern Android fitness application that helps users track their daily steps, monitor activity, participate in challenges, connect with friends, and stay motivated through gamification.
-
----
-
-## 📱 About Steppy
-
-**Steppy** is an Android-based step-tracking and fitness application designed to make everyday physical activity more engaging and social.
-
-The application integrates with **Android Health Connect** to access step information and provides users with features such as:
-
-- Daily step tracking
-- Fitness analytics
-- Personal activity monitoring
-- Step-based challenges
-- Friends and social interaction
-- Gamification
-- User authentication
-- Challenge creation and participation
-- Progress tracking
-
-The project is developed using **Kotlin** and follows a modular architecture designed for maintainability and scalability.
-
----
-
-# 🎯 Objectives
-
-The main objectives of Steppy are to:
-
-- Encourage users to increase their daily physical activity.
-- Track daily step counts using Android Health Connect.
-- Provide users with meaningful fitness statistics.
-- Create friendly competition through step challenges.
-- Allow users to connect with friends.
-- Motivate users through gamification.
-- Provide an easy-to-use mobile fitness experience.
-- Build a scalable Android application architecture.
-
----
-
-# ✨ Features
-
-## 👣 Step Tracking
-
-Steppy retrieves step information using Android Health Connect.
-
-Users can view:
-
-- Daily steps
-- Step progress
-- Activity information
-- Historical activity data
-
----
-
-## 📊 Analytics
-
-The analytics section allows users to understand their activity patterns.
-
-The application provides activity information that can help users monitor their progress over time.
-
----
-
-## 🏆 Fitness Challenges
-
-Users can participate in step-based challenges.
-
-Challenge functionality includes:
-
-- Viewing available challenges
+Steppy — Smart Step Tracking & Fitness App
+Steppy is an Android fitness application designed to help users track their daily physical activity, monitor step counts, participate in challenges, connect with friends, and stay motivated through gamification.
+The application integrates Android Health Connect for health and step data, Firebase for authentication and cloud data management, and follows a modular architecture to keep the application maintainable and scalable.
+📱 Project Overview
+Steppy provides users with a simple platform to monitor their physical activity and improve their fitness habits.
+The application focuses on:
+- 👟 Daily step tracking
+- 📊 Activity and health analytics
+- 🏆 Fitness challenges
+- 👥 Friends and social interaction
+- 🎮 Gamification
+- 🔐 User authentication
+- ☁️ Firebase cloud integration
+- 🔄 Background synchronization of health data
+The project is developed as an Android application using Kotlin.
+✨ Features
+👟 Step Tracking
+- Track daily step counts.
+- Retrieve step information through Android Health Connect.
+- Synchronize health data with the application.
+- Display activity information to users.
+📊 Analytics
+Users can view their physical activity and step-related information through dedicated analytics screens.
+🏆 Challenges
+Users can participate in fitness challenges.
+The challenge system includes:
 - Creating challenges
 - Joining challenges
-- Tracking challenge progress
-- Comparing participant activity
+- Tracking participant progress
+- Managing challenge participants
+- Monitoring challenge activity
+👥 Friends
+The application provides social functionality that allows users to interact with other users.
+Features include:
+- Friend management
+- Friend data synchronization
+- Social activity
+🎮 Gamification
+Steppy includes gamification functionality to encourage users to remain physically active.
+The gamification system is handled through the application's domain layer.
+🔐 Authentication
+The application includes authentication functionality using Firebase.
+The authentication layer separates authentication logic from the user interface through repositories.
+🔄 Background Synchronization
+Health information can be synchronized in the background using a dedicated worker.
+This allows step information to remain updated without requiring the user to manually refresh the application.
+🏗️ Project Architecture
+Steppy follows a modular architecture that separates UI, business logic, data handling, and dependency injection.
+Steppy
+│
+├── Presentation / UI
+│   ├── Screens
+│   ├── Navigation
+│   └── UI Components
+│
+├── Domain
+│   └── Use Cases
+│
+├── Data
+│   ├── Health
+│   ├── Repositories
+│   └── Models
+│
+├── Dependency Injection
+│   ├── AppModule
+│   ├── FirebaseModule
+│   └── RepositoryModule
+│
+└── Firebase
+    └── Authentication & Cloud Data
 
----
+🛠️ Technologies Used
+Technology	Purpose
+Kotlin	Main programming language
+Android Studio	Android development
+Jetpack Compose / Android UI	User interface
+Health Connect	Health and step data
+Firebase	Authentication and cloud services
+Gradle	Build system
+WorkManager	Background synchronization
+Git & GitHub	Version control
 
-## 👥 Friends
 
-Steppy includes social functionality that allows users to interact with friends.
+📂 Project Structure
+Steppy/
+│
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/example/steppy/
+│   │   │   │
+│   │   │   └── res/
+│   │   │
+│   │   ├── androidTest/
+│   │   └── test/
+│   │
+│   └── build.gradle.kts
+│
+├── gradle/
+│
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── firestore.rules
+└── README.md
 
-Users can:
+📦 Important Components
+Health Data
+data/
+└── health/
+    ├── HealthConnectManager.kt
+    └── StepSyncWorker.kt
 
-- View friends
-- Manage friend relationships
-- Participate in challenges together
-- Compare activity progress
+These components handle interaction with health data and background step synchronization.
+Models
+models/
+├── Challenge.kt
+├── Participant.kt
+├── StepData.kt
+└── User.kt
 
----
+These classes represent the primary data structures used by the application.
+Repositories
+repositories/
+├── AuthRepository.kt
+├── AuthRepositoryImpl.kt
+├── ChallengeRepository.kt
+├── ChallengeRepositoryImpl.kt
+├── FriendsRepository.kt
+└── FriendsRepositoryImpl.kt
 
-## 🎮 Gamification
+Repositories provide an abstraction between the application logic and external data sources.
+Domain Layer
+domain/
+└── usecase/
+    └── GamificationUseCase.kt
 
-The application uses gamification concepts to make fitness more engaging.
+The domain layer contains application-specific business logic.
+Dependency Injection
+di/
+├── AppModule.kt
+├── FirebaseModule.kt
+└── RepositoryModule.kt
 
-Examples include:
+These modules manage application dependencies and make the architecture easier to maintain.
+🔥 Firebase
+Steppy uses Firebase services for cloud-based functionality.
+Firebase is used for areas such as:
+- User authentication
+- User information
+- Challenge information
+- Friends/social data
+- Cloud database functionality
+The project also includes:
+firestore.rules
 
-- Step goals
-- Challenges
-- Progress tracking
-- Competition
-- Achievement-oriented activity
+which contains Firestore security rules.
+Security Note: Never upload private Firebase credentials, API secrets, service-account keys, or other sensitive information to GitHub.
 
----
+🚀 Getting Started
+1. Clone the Repository
+git clone https://github.com/aryanburramukku2007-droid/DBSE-DBD-Project.git
 
-## 🔐 Authentication
+Navigate to the project:
+cd DBSE-DBD-Project/Project/Steppy
 
-Steppy includes user authentication functionality.
+2. Open in Android Studio
+Open the following folder in Android Studio:
+DBSE-DBD-Project/Project/Steppy
 
-The authentication layer supports:
+Allow Android Studio to:
+- Sync Gradle
+- Download required dependencies
+- Index the project
+3. Configure Firebase
+Set up the Firebase project required by the application.
+Add the appropriate Firebase configuration file:
+google-services.json
 
-- User registration
-- User login
-- User authentication state
-- User profile information
+Place it inside:
+Steppy/app/
 
-Firebase is used as part of the application's authentication/backend infrastructure.
+Do not commit sensitive credentials or private configuration files if they contain secrets.
+4. Configure Health Connect
+Install Health Connect on a supported Android device and grant the required health permissions to Steppy.
+The application uses Health Connect to access step-related health information.
+5. Build the Application
+From Android Studio, select:
+Build → Make Project
 
----
+or run:
+./gradlew build
 
-## ❤️ Health Connect Integration
+On Windows:
+.\gradlew.bat build
 
-Steppy integrates with:
+▶️ Running the Application
+Connect an Android device or start an Android Emulator.
+Then:
+Run → Run 'app'
 
-**Android Health Connect**
+Alternatively, use:
+./gradlew installDebug
 
-Health Connect provides access to supported health and fitness information while allowing users to control which health data applications can access.
+On Windows:
+.\gradlew.bat installDebug
 
-The application includes functionality for:
+🧪 Testing
+The project contains both unit and Android instrumentation tests.
+app/
+├── src/
+│   ├── test/
+│   └── androidTest/
 
-- Checking Health Connect availability
-- Requesting permissions
-- Reading step records
-- Synchronizing step information
+Run unit tests:
+./gradlew test
 
----
+Run Android tests:
+./gradlew connectedAndroidTest
 
-# 🏗️ Application Architecture
-
-The project follows a layered Android architecture separating UI, domain logic, data access, and infrastructure.
-
-```text
-                         ┌──────────────────────┐
-                         │      Steppy App      │
-                         └──────────┬───────────┘
-                                    │
-                    ┌───────────────┼───────────────┐
-                    │               │               │
-                    ▼               ▼               ▼
-             ┌────────────┐  ┌────────────┐  ┌────────────┐
-             │     UI     │  │ Navigation │  │  Screens   │
-             └─────┬──────┘  └────────────┘  └────────────┘
-                   │
-                   ▼
-             ┌────────────┐
-             │   Domain   │
-             │  Use Cases │
-             └─────┬──────┘
-                   │
-                   ▼
-             ┌────────────┐
-             │ Repository │
-             │   Layer    │
-             └─────┬──────┘
-                   │
-          ┌────────┴─────────┐
-          │                  │
-          ▼                  ▼
-   ┌──────────────┐   ┌──────────────┐
-   │ Health       │   │   Firebase   │
-   │ Connect      │   │   Backend    │
-   └──────────────┘   └──────────────┘
+🔐 Security
+The project includes Firestore security rules to help control access to cloud data.
+Important security practices:
+- Do not expose Firebase private keys.
+- Do not upload service-account credentials.
+- Use appropriate Firestore security rules.
+- Validate authenticated users before accessing protected data.
+- Keep sensitive configuration outside the public repository.
+🌟 Future Improvements
+Possible future enhancements include:
+- 🤖 AI-powered fitness recommendations
+- 📈 Advanced activity analytics
+- 🏃 Personalized fitness goals
+- 🥇 Leaderboards
+- 🔔 Smart fitness notifications
+- 🌎 Global fitness competitions
+- 🧠 Personalized activity predictions
+- ⌚ Wearable device integration
+- 📱 Improved smartwatch support
+- 🎯 Personalized daily challenges
+🎯 Project Objectives
+The main objectives of Steppy are:
+1. Provide users with an easy way to monitor physical activity.
+2. Integrate Android health data into a single application.
+3. Encourage users to maintain an active lifestyle.
+4. Introduce social interaction through fitness challenges.
+5. Use gamification to increase user engagement.
+6. Demonstrate the development of a modern Android application.
+7. Implement a scalable architecture separating UI, business logic, and data layers.
+👨‍💻 Development
+Project: Steppy
+Platform: Android
+Language: Kotlin
+Category: Health & Fitness
+Repository: DBSE-DBD-Project
