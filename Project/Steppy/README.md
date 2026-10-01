@@ -164,32 +164,6 @@ GitHub	Repository management
 
 
 
-## 📁 Steppy Project Structure
-
-Steppy/
-│
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/example/steppy/
-│   │   │   │
-│   │   │   └── res/
-│   │   │
-│   │   ├── androidTest/
-│   │   └── test/
-│   │
-│   └── build.gradle.kts
-│
-├── gradle/
-│
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── firestore.rules
-├── gradlew
-├── gradlew.bat
-└── README.md
 
 ## 📦 Main Application Components
 
