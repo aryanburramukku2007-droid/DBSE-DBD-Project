@@ -171,7 +171,9 @@ Health
 
 data/
 └── health/
+
     ├── HealthConnectManager.kt
+    
     └── StepSyncWorker.kt
 
 HealthConnectManager
@@ -187,8 +189,11 @@ The application contains models representing important application entities.
 
 models/
 ├── Challenge.kt
+
 ├── Participant.kt
+
 ├── StepData.kt
+
 └── User.kt
 
 ## 🗄️ Repository Layer
@@ -196,11 +201,17 @@ models/
 The repository layer separates data access from the rest of the application.
 
 repositories/
+
 ├── AuthRepository.kt
+
 ├── AuthRepositoryImpl.kt
+
 ├── ChallengeRepository.kt
+
 ├── ChallengeRepositoryImpl.kt
+
 ├── FriendsRepository.kt
+
 └── FriendsRepositoryImpl.kt
 
 This structure helps make the application easier to maintain and extend.
