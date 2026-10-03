@@ -1,6 +1,6 @@
-# 🚶‍♂️ Steppy — Smart Step Tracking & Fitness Challenge App
+## 🚶‍♂️ Steppy — Smart Step Tracking & Fitness Challenge App
 
-> A modern Android fitness application that helps users track their daily steps, monitor activity, participate in challenges, connect with friends, and stay motivated through gamification.
+ A modern Android fitness application that helps users track their daily steps, monitor activity, participate in challenges, connect with friends, and stay motivated through gamification.
 
 ---
 
@@ -24,22 +24,29 @@ The project is developed using **Kotlin** and follows a modular architecture des
 
 ---
 
-# 🎯 Objectives
+## 🎯 Objectives
 
 The main objectives of Steppy are to:
 
 - Encourage users to increase their daily physical activity.
+
 - Track daily step counts using Android Health Connect.
+
 - Provide users with meaningful fitness statistics.
+
 - Create friendly competition through step challenges.
+
 - Allow users to connect with friends.
+
 - Motivate users through gamification.
+
 - Provide an easy-to-use mobile fitness experience.
+
 - Build a scalable Android application architecture.
 
 ---
 
-# ✨ Features
+## ✨ Features
 
 ## 👣 Step Tracking
 
@@ -48,8 +55,11 @@ Steppy retrieves step information using Android Health Connect.
 Users can view:
 
 - Daily steps
+
 - Step progress
+
 - Activity information
+
 - Historical activity data
 
 ---
@@ -69,9 +79,13 @@ Users can participate in step-based challenges.
 Challenge functionality includes:
 
 - Viewing available challenges
+
 - Creating challenges
+
 - Joining challenges
+
 - Tracking challenge progress
+
 - Comparing participant activity
 
 ---
@@ -83,8 +97,11 @@ Steppy includes social functionality that allows users to interact with friends.
 Users can:
 
 - View friends
+
 - Manage friend relationships
+
 - Participate in challenges together
+
 - Compare activity progress
 
 ---
@@ -96,10 +113,15 @@ The application uses gamification concepts to make fitness more engaging.
 Examples include:
 
 - Step goals
+
 - Challenges
+
 - Progress tracking
+
 - Competition
+
 - Achievement-oriented activity
+
 
 ---
 
@@ -110,9 +132,13 @@ Steppy includes user authentication functionality.
 The authentication layer supports:
 
 - User registration
+
 - User login
+
 - User authentication state
+
 - User profile information
+
 
 Firebase is used as part of the application's authentication/backend infrastructure.
 
@@ -129,13 +155,17 @@ Health Connect provides access to supported health and fitness information while
 The application includes functionality for:
 
 - Checking Health Connect availability
+
 - Requesting permissions
+
 - Reading step records
+
 - Synchronizing step information
+
 
 ---
 
-# 🏗️ Application Architecture
+## 🏗️ Application Architecture
 
 The project follows a layered Android architecture separating UI, domain logic, data access, and infrastructure.
 
